@@ -34,6 +34,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
           >
             {brandName}
           </Typography>
+           <img src={brandImg} alt="Brand" className="mx-auto mt-4" style={{ maxWidth: "70%", height: "auto" }} />
         </Link>
         <IconButton
           variant="text"
@@ -97,7 +98,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
 
 Sidenav.defaultProps = {
   brandImg: "/img/logo-ct.png",
-  brandName: "Material Tailwind React",
+  brandName: "Éxitos que inspiran",
 };
 
 Sidenav.propTypes = {

@@ -33,7 +33,7 @@ export function Profile() {
           <div className="mb-10 flex items-center justify-between flex-wrap gap-6">
             <div className="flex items-center gap-6">
               <Avatar
-                src="/img/bruce-mars.jpeg"
+                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/bruce-mars.jpeg`}
                 alt="bruce-mars"
                 size="xl"
                 variant="rounded"
@@ -159,7 +159,7 @@ export function Profile() {
                       className="mx-0 mt-0 mb-4 h-64 xl:h-40"
                     >
                       <img
-                        src={img}
+                        src={`${import.meta.env.VITE_APP_ASSET_PATH}${img}`}
                         alt={title}
                         className="h-full w-full object-cover"
                       />
@@ -195,7 +195,7 @@ export function Profile() {
                         {members.map(({ img, name }, key) => (
                           <Tooltip key={name} content={name}>
                             <Avatar
-                              src={img}
+                              src={`${import.meta.env.VITE_APP_ASSET_PATH}${img}`}
                               alt={name}
                               size="xs"
                               variant="circular"
