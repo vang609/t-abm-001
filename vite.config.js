@@ -5,8 +5,8 @@ const base = process.env.VITE_ASSET_PATH || '/';
 
 export default defineConfig({
   plugins: [react()],
-  base,
-  // base: '/project-name/',
+  // base,
+  base: '/t-abm-001/',
   // base: process.env.VITE_ASSET_PATH, 
   resolve: {
     alias: [{ find: "@", replacement: "/src" }],
