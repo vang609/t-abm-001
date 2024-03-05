@@ -83,14 +83,21 @@ export function DashboardNavbar() {
           >
             <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
           </IconButton>
-          <Link to="/auth/sign-in">
+          social: (
+                  <div className="flex items-center gap-4">
+                    <i className="fa-brands fa-facebook text-blue-700" />
+                    <i className="fa-brands fa-twitter text-blue-400" />
+                    <i className="fa-brands fa-instagram text-purple-500" />
+                  </div>
+                ),
+          {/* <Link to="/auth/sign-in">
             <Button
               variant="text"
               color="blue-gray"
               className="hidden items-center gap-1 px-4 xl:flex normal-case"
             >
               <UserCircleIcon className="h-5 w-5 text-blue-gray-500" />
-              Sign In
+              Sign IN
             </Button>
             <IconButton
               variant="text"
@@ -99,8 +106,8 @@ export function DashboardNavbar() {
             >
               <UserCircleIcon className="h-5 w-5 text-blue-gray-500" />
             </IconButton>
-          </Link>
-          <Menu>
+          </Link> */}
+          {/* <Menu>
             <MenuHandler>
               <IconButton variant="text" color="blue-gray">
                 <BellIcon className="h-5 w-5 text-blue-gray-500" />
@@ -177,7 +184,7 @@ export function DashboardNavbar() {
                 </div>
               </MenuItem>
             </MenuList>
-          </Menu>
+          </Menu> */}
           <IconButton
             variant="text"
             color="blue-gray"

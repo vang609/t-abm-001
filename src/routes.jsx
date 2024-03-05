@@ -6,7 +6,7 @@ import {
   ServerStackIcon,
   RectangleStackIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Profile, Tables, Notifications } from "@/pages/dashboard";
+import { Home, Profile, Tables, Notifications, Inicio, Nosotros } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
 
 const icon = {
@@ -17,6 +17,18 @@ export const routes = [
   {
     layout: "dashboard",
     pages: [
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "inicio",
+        path: "/inicio",
+        element: <Inicio />,
+      },
+      {
+        icon: <HomeIcon {...icon} />,
+        name: "nosotros",
+        path: "/about",
+        element: <Nosotros />,
+      },
       {
         icon: <HomeIcon {...icon} />,
         name: "dashboard",
@@ -44,21 +56,51 @@ export const routes = [
     ],
   },
   {
-    title: "auth pages",
+    title: "Productos",
     layout: "auth",
     pages: [
+      {
+        icon: <InformationCircleIcon {...icon} />,
+        name: "trofeos",
+        path: "/notifications",
+        element: <Notifications />,
+      },
+      {
+        icon: <InformationCircleIcon {...icon} />,
+        name: "copas",
+        path: "/notifications",
+        element: <Notifications />,
+      },
+      {
+        icon: <InformationCircleIcon {...icon} />,
+        name: "balones",
+        path: "/notifications",
+        element: <Notifications />,
+      },
+      {
+        icon: <InformationCircleIcon {...icon} />,
+        name: "terminacion mate",
+        path: "/notifications",
+        element: <Notifications />,
+      },
+      {
+        icon: <InformationCircleIcon {...icon} />,
+        name: "reconocimiento cristal",
+        path: "/notifications",
+        element: <Notifications />,
+      },
       {
         icon: <ServerStackIcon {...icon} />,
         name: "sign in",
         path: "/sign-in",
         element: <SignIn />,
       },
-      {
-        icon: <RectangleStackIcon {...icon} />,
-        name: "sign up",
-        path: "/sign-up",
-        element: <SignUp />,
-      },
+      // {
+      //   icon: <RectangleStackIcon {...icon} />,
+      //   name: "sign up",
+      //   path: "/sign-up",
+      //   element: <SignUp />,
+      // },
     ],
   },
 ];
