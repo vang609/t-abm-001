@@ -7,7 +7,7 @@ import {
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
 
-export function Nosotros() {
+export function Contacto() {
   return (
     <>
       <section className="m-8 flex">
@@ -81,4 +81,4 @@ export function Nosotros() {
   );
 }
 
-export default Nosotros;
+export default Contacto;
