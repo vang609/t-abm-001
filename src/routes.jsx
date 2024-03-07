@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { Home, Contacto, Profile, Tables, Notifications, Inicio, Nosotros } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
+import { Trofeos } from "@/pages/products";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -64,44 +65,56 @@ export const routes = [
   },
   {
     title: "Productos",
-    layout: "auth",
+    layout: "dashboard",
+    // layout: "auth",
     pages: [
       {
         icon: <InformationCircleIcon {...icon} />,
         name: "trofeos",
-        path: "/notifications",
-        element: <Notifications />,
+        path: "/trofeos",
+        element: <Trofeos />,
       },
       {
         icon: <InformationCircleIcon {...icon} />,
         name: "copas",
         path: "/notifications",
         element: <Notifications />,
+        isDisabled: false
       },
       {
         icon: <InformationCircleIcon {...icon} />,
         name: "balones",
         path: "/notifications",
         element: <Notifications />,
+        isDisabled: false
       },
       {
         icon: <InformationCircleIcon {...icon} />,
         name: "terminacion mate",
         path: "/notifications",
         element: <Notifications />,
+        isDisabled: false
       },
       {
         icon: <InformationCircleIcon {...icon} />,
         name: "reconocimiento cristal",
         path: "/notifications",
         element: <Notifications />,
+        isDisabled: false
       },
-      {
-        icon: <ServerStackIcon {...icon} />,
-        name: "sign in",
-        path: "/sign-in",
-        element: <SignIn />,
-      },
+      // {
+      //   icon: <ServerStackIcon {...icon} />,
+      //   name: "producto",
+      //   path: "/producto/:id",
+      //   element: <Product />,
+      //   isDisabled: true
+      // },
+      // {
+      //   icon: <ServerStackIcon {...icon} />,
+      //   name: "sign in",
+      //   path: "/sign-in",
+      //   element: <SignIn />,
+      // },
       // {
       //   icon: <RectangleStackIcon {...icon} />,
       //   name: "sign up",

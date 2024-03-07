@@ -9,6 +9,7 @@ import {
 } from "@/widgets/layout";
 import routes from "@/routes";
 import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
+import { ProductDetail } from "@/pages/products";
 
 export function Dashboard() {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -36,10 +37,11 @@ export function Dashboard() {
           {routes.map(
             ({ layout, pages }) =>
               layout === "dashboard" &&
-              pages.map(({ path, element }) => (
-                <Route exact path={path} element={element} />
+              pages.map(({ path, element, isDisabled }) => (
+               <Route exact path={path} element={element} />
               ))
           )}
+          <Route path="/product/:productId" element={<ProductDetail />} />
         </Routes>
         <div className="text-blue-gray-600">
           <Footer />
