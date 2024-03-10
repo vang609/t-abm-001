@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@material-tailwind/react";
 import { useMaterialTailwindController, setOpenSidenav } from "@/context";
+// import { cloneElement, ReactElement, React } from 'react';
 
 export function Sidenav({ brandImg, brandName, routes }) {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -77,9 +78,14 @@ export function Sidenav({ brandImg, brandName, routes }) {
                       className="flex items-center gap-4 px-4 capitalize"
                       fullWidth
                     >
-                      {icon}
+                      {/* {icon && React.isValidElement(icon) ?
+                        cloneElement(icon, {
+                          size: icon.props.size || '24px' // Adjust size as needed. Checks if a size prop is already provided, otherwise sets a default size.
+                        }) : icon} */}
+                        { icon }
                       <Typography
                         color="inherit"
+                        size="inherit"
                         className="font-medium capitalize"
                       >
                         {name}

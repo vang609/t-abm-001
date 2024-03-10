@@ -6,9 +6,14 @@ import {
   ServerStackIcon,
   RectangleStackIcon,
 } from "@heroicons/react/24/solid";
-import { Home, Contacto, Profile, Tables, Notifications, Inicio, Nosotros } from "@/pages/dashboard";
+import { IoIosFootball } from "react-icons/io";
+import { GiTrophyCup, GiLaurelsTrophy, GiDiamondTrophy } from "react-icons/gi";
+import { LiaTrophySolid } from "react-icons/lia";
+import { FcContacts, FcHome, FcAbout, FcGlobe } from "react-icons/fc";
+
+import { Home, Contacto, Profile, Tables, Notifications, Inicio, Nosotros, Ubicacion } from "@/pages/dashboard";
 import { SignIn, SignUp } from "@/pages/auth";
-import { Trofeos } from "@/pages/products";
+import { Balones, Copas, ReconocimientoCristal, TerminacionMate, Trofeos } from "@/pages/products";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -19,22 +24,28 @@ export const routes = [
     layout: "dashboard",
     pages: [
       {
-        icon: <HomeIcon {...icon} />,
+        icon: <FcHome {...icon} />,
         name: "inicio",
         path: "/inicio",
         element: <Inicio />,
       },
       {
-        icon: <HomeIcon {...icon} />,
+        icon: <FcContacts {...icon} />,
         name: "contacto",
         path: "/contacto",
         element: <Contacto />,
       },
       {
-        icon: <HomeIcon {...icon} />,
+        icon: <FcAbout {...icon} />,
         name: "nosotros",
         path: "/nosotros",
         element: <Nosotros />,
+      },
+      {
+        icon: <FcGlobe {...icon} />,
+        name: "Ubicación",
+        path: "/Ubicacion",
+        element: <Ubicacion />,
       },
       
       // {
@@ -43,24 +54,24 @@ export const routes = [
       //   path: "/home",
       //   element: <Home />,
       // },
-      {
-        icon: <UserCircleIcon {...icon} />,
-        name: "profile",
-        path: "/profile",
-        element: <Profile />,
-      },
-      {
-        icon: <TableCellsIcon {...icon} />,
-        name: "tables",
-        path: "/tables",
-        element: <Tables />,
-      },
-      {
-        icon: <InformationCircleIcon {...icon} />,
-        name: "notifications",
-        path: "/notifications",
-        element: <Notifications />,
-      },
+      // {
+      //   icon: <UserCircleIcon {...icon} />,
+      //   name: "profile",
+      //   path: "/profile",
+      //   element: <Profile />,
+      // },
+      // {
+      //   icon: <TableCellsIcon {...icon} />,
+      //   name: "tables",
+      //   path: "/tables",
+      //   element: <Tables />,
+      // },
+      // {
+      //   icon: <InformationCircleIcon {...icon} />,
+      //   name: "notifications",
+      //   path: "/notifications",
+      //   element: <Notifications />,
+      // },
     ],
   },
   {
@@ -69,37 +80,37 @@ export const routes = [
     // layout: "auth",
     pages: [
       {
-        icon: <InformationCircleIcon {...icon} />,
+        icon: <GiTrophyCup color="#D4AF37" size="54px" {...icon} />,
         name: "trofeos",
         path: "/trofeos",
         element: <Trofeos />,
       },
       {
-        icon: <InformationCircleIcon {...icon} />,
+        icon: <GiLaurelsTrophy color="#CC9933" {...icon} />,
         name: "copas",
-        path: "/notifications",
-        element: <Notifications />,
+        path: "/copas",
+        element: <Copas />,
         isDisabled: false
       },
       {
-        icon: <InformationCircleIcon {...icon} />,
+        icon: <IoIosFootball color="#0099FF" {...icon} />,
         name: "balones",
-        path: "/notifications",
-        element: <Notifications />,
+        path: "/balones",
+        element: <Balones />,
         isDisabled: false
       },
       {
-        icon: <InformationCircleIcon {...icon} />,
+        icon: <LiaTrophySolid color="#CC9933" {...icon} />,
         name: "terminacion mate",
-        path: "/notifications",
-        element: <Notifications />,
+        path: "/TerminacionMate",
+        element: <TerminacionMate />,
         isDisabled: false
       },
       {
-        icon: <InformationCircleIcon {...icon} />,
+        icon: <GiDiamondTrophy color="#009999" {...icon} />,
         name: "reconocimiento cristal",
-        path: "/notifications",
-        element: <Notifications />,
+        path: "/ReconocimientoCristal",
+        element: <ReconocimientoCristal />,
         isDisabled: false
       },
       // {
