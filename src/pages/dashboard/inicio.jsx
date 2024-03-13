@@ -66,7 +66,7 @@ export function Inicio() {
                   variant="small"
                   className="font-normal text-blue-gray-600"
                 >
-                  CEO / Founder
+                  CEO / Fundador
                 </Typography>
               </div>
             </div>

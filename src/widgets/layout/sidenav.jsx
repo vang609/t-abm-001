@@ -1,14 +1,8 @@
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
-import { XMarkIcon } from "@heroicons/react/24/outline";
-import {
-  Avatar,
-  Button,
-  IconButton,
-  Typography,
-} from "@material-tailwind/react";
+import { IoCloseCircle } from "react-icons/io5";
+import { Button, IconButton, Typography } from "@material-tailwind/react";
 import { useMaterialTailwindController, setOpenSidenav } from "@/context";
-// import { cloneElement, ReactElement, React } from 'react';
 
 export function Sidenav({ brandImg, brandName, routes }) {
   const [controller, dispatch] = useMaterialTailwindController();
@@ -21,82 +15,60 @@ export function Sidenav({ brandImg, brandName, routes }) {
 
   return (
     <aside
-      className={`${sidenavTypes[sidenavType]} ${
-        openSidenav ? "translate-x-0" : "-translate-x-80"
-      } fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100`}
+      className={`${
+        sidenavTypes[sidenavType]
+      } ${openSidenav ? "translate-x-0" : "-translate-x-80"} fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100 overflow-hidden flex flex-col`}
     >
-      <div
-        className={`relative`}
-      >
-        <Link to="/" className="py-6 px-8 text-center">
-          <Typography
-            variant="h6"
-            color={sidenavType === "dark" ? "white" : "blue-gray"}
-          >
+      <div className="relative py-6 px-8 text-center">
+        <Link to="/">
+          <Typography variant="h6" color={sidenavType === "dark" ? "white" : "blue-gray"}>
             {brandName}
           </Typography>
-           <img src={brandImg} alt="Brand" className="mx-auto mt-4" style={{ maxWidth: "70%", height: "auto" }} />
+          <img src={brandImg} alt="Brand" className="mx-auto mt-4" style={{ maxWidth: "70%", height: "auto" }} />
         </Link>
         <IconButton
           variant="text"
-          color="black"
+          color="red"
           size="sm"
           ripple={false}
           className="absolute right-0 top-0 grid rounded-br-none rounded-tl-none xl:hidden"
           onClick={() => setOpenSidenav(dispatch, false)}
         >
-          <XMarkIcon strokeWidth={2.5} className="h-5 w-5 " />
+          <IoCloseCircle className="h-6 w-6" />
         </IconButton>
       </div>
-      <div className="m-4">
-        {routes.map(({ layout, title, pages }, key) => (
-          <ul key={key} className="mb-4 flex flex-col gap-1">
-            {title && (
-              <li className="mx-3.5 mt-4 mb-2">
-                <Typography
-                  variant="small"
-                  color={sidenavType === "dark" ? "white" : "blue-gray"}
-                  className="font-black uppercase opacity-75"
-                >
-                  {title}
-                </Typography>
-              </li>
-            )}
-            {pages.map(({ icon, name, path }) => (
-              <li key={name}>
-                <NavLink to={`/${layout}${path}`}>
-                  {({ isActive }) => (
-                    <Button
-                      variant={isActive ? "gradient" : "text"}
-                      color={
-                        isActive
-                          ? sidenavColor
-                          : sidenavType === "dark"
-                          ? "white"
-                          : "blue-gray"
-                      }
-                      className="flex items-center gap-4 px-4 capitalize"
-                      fullWidth
-                    >
-                      {/* {icon && React.isValidElement(icon) ?
-                        cloneElement(icon, {
-                          size: icon.props.size || '24px' // Adjust size as needed. Checks if a size prop is already provided, otherwise sets a default size.
-                        }) : icon} */}
-                        { icon }
-                      <Typography
-                        color="inherit"
-                        size="inherit"
-                        className="font-medium capitalize"
+      <div className="flex-grow overflow-auto">
+        <div className="px-2"> {/* Adjust this padding as needed */}
+          {routes.map(({ layout, title, pages }, key) => (
+            <ul key={key} className="mb-4 flex flex-col gap-1">
+              {title && (
+                <li className="mt-4 mb-2 px-2"> {/* Adjusted padding here */}
+                  <Typography variant="small" color={sidenavType === "dark" ? "white" : "blue-gray"} className="font-black uppercase opacity-75">
+                    {title}
+                  </Typography>
+                </li>
+              )}
+              {pages.map(({ icon, name, path }) => (
+                <li key={name} className="px-2"> {/* Adjusted padding here */}
+                  <NavLink to={`/${layout}${path}`}>
+                    {({ isActive }) => (
+                      <Button
+                        variant={isActive ? "gradient" : "text"}
+                        color={isActive ? sidenavColor : sidenavType === "dark" ? "white" : "blue-gray"}
+                        className="flex items-center gap-4 capitalize w-full justify-start" // Removed px-4 to adjust padding
                       >
-                        {name}
-                      </Typography>
-                    </Button>
-                  )}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        ))}
+                          {icon}
+                        <Typography color="inherit" size="inherit" className="font-medium capitalize">
+                          {name}
+                        </Typography>
+                      </Button>
+                    )}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
       </div>
     </aside>
   );
@@ -116,3 +88,4 @@ Sidenav.propTypes = {
 Sidenav.displayName = "/src/widgets/layout/sidnave.jsx";
 
 export default Sidenav;
+
