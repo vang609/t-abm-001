@@ -57,21 +57,21 @@ export function Trofeos() {
             >
               Comparte con el codigo
             </Typography>
-            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 ">
+            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 animate__animated animate__fadeIn ">
               {trofeosData.map(
                 ({ img, title, description, tag, route, id }, index) => (
                   <Card key={`${title}-${index}`} color="transparent" shadow={false}>
                    {/* <CardHeader
-  floated={false}
-  color="gray"
-  className="mx-0 mt-0 mb-4 h-64 xl:h-40 relative overflow-hidden"
->
-  <img
-    src={`${import.meta.env.VITE_APP_ASSET_PATH}${img}`}
-    alt={title}
-    className="w-full h-full object-contain"
-  />
-</CardHeader> */}
+                        floated={false}
+                        color="gray"
+                        className="mx-0 mt-0 mb-4 h-64 xl:h-40 relative overflow-hidden"
+                      >
+                        <img
+                          src={`${import.meta.env.VITE_APP_ASSET_PATH}${img}`}
+                          alt={title}
+                          className="w-full h-full object-contain"
+                        />
+                      </CardHeader> */}
 
 
                     <CardHeader

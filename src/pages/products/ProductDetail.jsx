@@ -16,7 +16,7 @@ import { ProfileInfoCard } from "@/widgets/cards";
 
 export function ProductDetail() {
   return (
-    <div className="flex justify-center mt-12 mb-8">
+    <div className="flex justify-center mt-12 mb-8 animate__animated animate__fadeInLeft">
       <div className="flex max-w-4xl flex-col md:flex-row rounded-xl bg-white shadow-md">
         {/* Adjust the width here for the image to be 2/3 on medium screens */}
         <div className="md:w-2/3 overflow-hidden rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-white">
