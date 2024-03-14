@@ -41,7 +41,7 @@ export function Dashboard() {
                <Route exact path={path} element={element} />
               ))
           )}
-          <Route path="/product/:productId" element={<ProductDetail />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
         <div className="text-blue-gray-600">
           <Footer />

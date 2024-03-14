@@ -10,20 +10,36 @@
 // } from "@material-tailwind/react";
 // import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 // import { authorsTableData, projectsTableData } from "@/data";
+import { useMemo } from 'react';
+import { Navigate, useNavigate, useParams } from 'react-router-dom';
 import { Link } from "react-router-dom";
 import { HiArrowCircleLeft } from "react-icons/hi";
 import { ProfileInfoCard } from "@/widgets/cards";
+import { getProductById } from "../../helpers";
 
 export function ProductDetail() {
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+  // console.log(id)
+
+  const {img, tag} = useMemo( () => getProductById( id ), [ id ]); 
+  console.log({img})
+  console.log({tag})
+
+const onNavigateBack = () => {
+    navigate(-1);
+  }
+
   return (
     <div className="flex justify-center mt-12 mb-8 animate__animated animate__fadeInLeft">
       <div className="flex max-w-4xl flex-col md:flex-row rounded-xl bg-white shadow-md">
         {/* Adjust the width here for the image to be 2/3 on medium screens */}
-        <div className="md:w-2/3 overflow-hidden rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-white">
+        <div className="md:w-2/3 overflow-hidden rounded-t-xl md:rounded-tr-none md:rounded-l-xl bg-white" style={{ aspectRatio: '3 / 2' }}>
           <img
-            src={`${import.meta.env.VITE_APP_ASSET_PATH}img/products/trofeos/ABM_C10.jpg`}
+            src={`${import.meta.env.VITE_APP_ASSET_PATH}${img}`}
             alt="Trofeos"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         </div>
         {/* Adjust the content to take up the remaining 1/3 on medium screens */}
@@ -32,7 +48,7 @@ export function ProductDetail() {
             Trofeo Soccer 
           </h6>
           <h4 className="mb-2 text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900">
-            Premisacion 1ro y 2do lugar
+            Premiasion 1ro y 2do lugar
           </h4>
           <p className="mb-8 text-base font-normal leading-relaxed text-gray-700">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis beatae facilis modi dicta nobis, sapiente aspernatur, molestias optio aliquid quisquam repellendus.
@@ -52,7 +68,7 @@ export function ProductDetail() {
               title="Consideraciones"
               description="Trofeos ABM nos comprometemos a..."
               details={{
-                "Nombre": "ABM_C10",
+                "Nombre": tag,
                 "Tamaño": "1m",
                 Color: "Oro/Plateado/bronce",
                 Deporte: "Cualquiera",
@@ -63,15 +79,16 @@ export function ProductDetail() {
 
              
             <div className="mt-8">
-              <Link to={`/dashboard/trofeos`}>
+              {/* <Link to={`/dashboard/trofeos`}> */}
                 <button
                   className="flex items-center gap-2 rounded-lg bg-transparent py-3 px-6 text-center text-xs font-bold uppercase leading-normal text-pink-500 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
                   type="button"
+                  onClick={ onNavigateBack }
                 >
                   Regresar
                   <HiArrowCircleLeft size="24px" />
                 </button>
-              </Link>
+              {/* </Link> */}
             </div>
 
         </div>

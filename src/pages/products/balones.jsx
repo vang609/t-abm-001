@@ -20,7 +20,8 @@ import {
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 import { ProfileInfoCard, MessageCard } from "@/widgets/cards";
-import { platformSettingsData, conversationsData, trofeosData } from "@/data";
+import { platformSettingsData, conversationsData, balonesData } from "@/data";
+
 
 export function Balones() {
   return (
@@ -31,8 +32,8 @@ export function Balones() {
           <div className="mb-10 flex items-center justify-between flex-wrap gap-6">
             <div className="flex items-center gap-6">
               <Avatar
-                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/products/trofeos/avatar_trophy.webp`}
-                alt="bruce-mars"
+                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/products/balones/avatar_trophyBall.webp`}
+                alt="avatar_trophyBall"
                 size="xl"
                 variant="rounded"
                 className="rounded-lg shadow-lg shadow-blue-gray-500/40"
@@ -58,7 +59,7 @@ export function Balones() {
               Comparte con el codigo
             </Typography>
             <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 ">
-              {trofeosData.map(
+              {balonesData.map(
                 ({ img, title, description, tag, route, id }, index) => (
                   <Card key={`${title}-${index}`} color="transparent" shadow={false}>
                    {/* <CardHeader

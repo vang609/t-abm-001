@@ -20,7 +20,7 @@ import {
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
 import { ProfileInfoCard, MessageCard } from "@/widgets/cards";
-import { platformSettingsData, conversationsData, trofeosData } from "@/data";
+import { platformSettingsData, conversationsData, trofeosMainData } from "@/data";
 
 export function Trofeos() {
   return (
@@ -58,7 +58,7 @@ export function Trofeos() {
               Comparte con el codigo
             </Typography>
             <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 animate__animated animate__fadeIn ">
-              {trofeosData.map(
+              {trofeosMainData.map(
                 ({ img, title, description, tag, route, id }, index) => (
                   <Card key={`${title}-${index}`} color="transparent" shadow={false}>
                    {/* <CardHeader
