@@ -20,6 +20,7 @@ import {
   CreditCardIcon,
   Bars3Icon,
 } from "@heroicons/react/24/solid";
+import { FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 import {
   useMaterialTailwindController,
   setOpenConfigurator,
@@ -31,6 +32,7 @@ export function DashboardNavbar() {
   const { fixedNavbar, openSidenav } = controller;
   const { pathname } = useLocation();
   const [layout, page] = pathname.split("/").filter((el) => el !== "");
+  const message = 'Necesito un cotizacion'
 
   return (
     <Navbar
@@ -50,13 +52,13 @@ export function DashboardNavbar() {
               fixedNavbar ? "mt-1" : ""
             }`}
           >
-            <Link to={`/${layout}`}>
+            <Link to={`/inicio`}>
               <Typography
                 variant="small"
                 color="blue-gray"
                 className="font-normal opacity-50 transition-all hover:text-blue-500 hover:opacity-100"
               >
-                {layout}
+                Inicio
               </Typography>
             </Link>
             <Typography
@@ -83,11 +85,21 @@ export function DashboardNavbar() {
           >
             <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
           </IconButton>
+
           social: (
                   <div className="flex items-center gap-4">
-                    <i className="fa-brands fa-facebook text-blue-700" />
-                    <i className="fa-brands fa-twitter text-blue-400" />
-                    <i className="fa-brands fa-instagram text-purple-500" />
+                    <a href="https://www.facebook.com/ABMTrofeos" target="_blank" rel="noopener noreferrer">
+                      <i className="fa-brands fa-facebook text-blue-700" />
+                    </a>
+                    <a href={`https://wa.me/+525533483104?text=${message}`} target="_blank" rel="noopener noreferrer">
+                      <FaWhatsapp color="#128c7e"/>
+                    </a>
+                    <a href="https://twitter.com/TrofeosABM" target="_blank" rel="noopener noreferrer">
+                      <FaXTwitter color="#000000"/>
+                    </a>
+                    <a href="https://www.instagram.com/trofeosabm/" target="_blank" rel="noopener noreferrer">
+                      <i className="fa-brands fa-instagram text-purple-500" />
+                    </a>
                   </div>
                 ),
           {/* <Link to="/auth/sign-in">

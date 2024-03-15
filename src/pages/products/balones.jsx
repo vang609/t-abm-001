@@ -58,7 +58,7 @@ export function Balones() {
             >
               Comparte con el codigo
             </Typography>
-            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 ">
+            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 animate__animated animate__fadeIn">
               {balonesData.map(
                 ({ img, title, description, tag, route, id }, index) => (
                   <Card key={`${title}-${index}`} color="transparent" shadow={false}>

@@ -24,8 +24,6 @@ export function ProductDetail() {
   // console.log(id)
 
   const {img, tag} = useMemo( () => getProductById( id ), [ id ]); 
-  console.log({img})
-  console.log({tag})
 
 const onNavigateBack = () => {
     navigate(-1);
