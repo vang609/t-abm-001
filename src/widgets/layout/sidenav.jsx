@@ -1,10 +1,11 @@
+import React, { forwardRef } from 'react';
 import PropTypes from "prop-types";
 import { Link, NavLink } from "react-router-dom";
 import { IoCloseCircle } from "react-icons/io5";
 import { Button, IconButton, Typography } from "@material-tailwind/react";
 import { useMaterialTailwindController, setOpenSidenav } from "@/context";
 
-export function Sidenav({ brandImg, brandName, routes }) {
+export const Sidenav = forwardRef(({ brandImg, routes }, ref) => {
   const [controller, dispatch] = useMaterialTailwindController();
   const { sidenavColor, sidenavType, openSidenav } = controller;
   const sidenavTypes = {
@@ -15,6 +16,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
 
   return (
     <aside
+      ref={ref}
       className={`${
         sidenavTypes[sidenavType]
       } ${openSidenav ? "translate-x-0" : "-translate-x-80"} fixed inset-0 z-50 my-4 ml-4 h-[calc(100vh-32px)] w-72 rounded-xl transition-transform duration-300 xl:translate-x-0 border border-blue-gray-100 overflow-hidden flex flex-col`}
@@ -22,7 +24,7 @@ export function Sidenav({ brandImg, brandName, routes }) {
       <div className="relative py-6 px-8 text-center">
         <Link to="/">
           <Typography variant="h6" color={sidenavType === "dark" ? "white" : "blue-gray"}>
-            {brandName}
+            Premiando al esfuerzo!
           </Typography>
           <img src={brandImg} alt="Brand" className="mx-auto mt-4" style={{ maxWidth: "70%", height: "auto" }} />
         </Link>
@@ -72,20 +74,20 @@ export function Sidenav({ brandImg, brandName, routes }) {
       </div>
     </aside>
   );
-}
+});
 
-Sidenav.defaultProps = {
-  brandImg: "/img/logo-ct.png",
-  brandName: "Premiando al esfuerzo!",
-};
+// Sidenav.defaultProps = {
+//   brandImg: "/img/logo-ct.png",
+//   brandName: "Premiando al esfuerzo!",
+// };
 
-Sidenav.propTypes = {
-  brandImg: PropTypes.string,
-  brandName: PropTypes.string,
-  routes: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
+// Sidenav.propTypes = {
+//   brandImg: PropTypes.string,
+//   brandName: PropTypes.string,
+//   routes: PropTypes.arrayOf(PropTypes.object).isRequired,
+// };
 
-Sidenav.displayName = "/src/widgets/layout/sidnave.jsx";
+// Sidenav.displayName = "/src/widgets/layout/sidnave.jsx";
 
-export default Sidenav;
+// export default Sidenav;
 

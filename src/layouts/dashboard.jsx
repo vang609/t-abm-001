@@ -1,3 +1,5 @@
+import React, { useEffect, useRef } from 'react';
+import { setOpenSidenav } from "@/context";
 import { Routes, Route } from "react-router-dom";
 import { Cog6ToothIcon } from "@heroicons/react/24/solid";
 import { IconButton } from "@material-tailwind/react";
@@ -12,14 +14,30 @@ import { useMaterialTailwindController, setOpenConfigurator } from "@/context";
 import { ProductDetail } from "@/pages/products";
 
 export function Dashboard() {
+  const sidenavRef = useRef();
   const [controller, dispatch] = useMaterialTailwindController();
   const { sidenavType } = controller;
+
+  useEffect(() => {
+  function handleClickOutside(event) {
+    const isMobileView = window.innerWidth < 768; // Example breakpoint for mobile view
+    if (isMobileView && sidenavRef.current && !sidenavRef.current.contains(event.target) && controller.openSidenav) {
+      setOpenSidenav(dispatch, false);
+    }
+  }
+
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+  };
+}, [controller.openSidenav, dispatch]);
 
   return (
     <div className="min-h-screen bg-blue-gray-50/50">
       <Sidenav
+        ref={sidenavRef}
         routes={routes}
-         brandImg={`${import.meta.env.VITE_APP_ASSET_PATH}img/logo/trofeosABM.png`}
+        brandImg={`${import.meta.env.VITE_APP_ASSET_PATH}img/logo/trofeosABM.png`}
       />
       <div className="p-4 xl:ml-80">
         <DashboardNavbar />

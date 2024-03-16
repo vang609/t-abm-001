@@ -70,8 +70,8 @@ export function Inicio() {
                 </Typography>
               </div>
             </div>
-             <div class="mx-auto max-w-7xl px-6 lg:px-8">
-                <p class="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Ofrecemos servicios premium a precios justos.</p>
+             <div className="mx-auto max-w-7xl px-6 lg:px-8">
+                <p className="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Ofrecemos servicios premium a precios justos.</p>
             </div> 
             {/* <div className="w-96">
               <Tabs value="app">
@@ -93,11 +93,11 @@ export function Inicio() {
             </div> */}
           </div>
           
-           {/* <div class="bg-white py-24 sm:py-32"> */}
-            {/* <div class="mx-auto max-w-7xl px-6 lg:px-8">
-              <div class="mx-auto max-w-4xl text-center">
-                <h2 class="text-base font-semibold leading-7 text-teal-600">Pricing</h2>
-                <p class="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Pricing plans for teams of all sizes</p>
+           {/* <div className="bg-white py-24 sm:py-32"> */}
+            {/* <div className="mx-auto max-w-7xl px-6 lg:px-8">
+              <div className="mx-auto max-w-4xl text-center">
+                <h2 className="text-base font-semibold leading-7 text-teal-600">Pricing</h2>
+                <p className="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Pricing plans for teams of all sizes</p>
               </div> 
             </div>  */}
           {/* </div>   */}

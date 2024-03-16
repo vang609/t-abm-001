@@ -1,8 +1,10 @@
 import { FcMultipleDevices, FcShop, FcAlarmClock } from "react-icons/fc";
+import { FaEnvelope, FaWhatsapp,FaPhoneFlip } from "react-icons/fa6";
 const icon = {
   className: "w-5 h-5 text-inherit",
 };
 export function Ubicacion() {
+  const message = 'Necesito un cotizacion'
   return (
     <>
 
@@ -14,7 +16,7 @@ export function Ubicacion() {
         </div>
         <div className="mt-16 lg:mt-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="col-span-1 md:col-span-2 rounded-lg overflow-hidden">
+                <div className="col-span-1 md:col-span-2 rounded-lg overflow-hidden animate__animated animate__backInDown">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5293319729644!2d-98.90963318751719!3d19.432731881770916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1e1461db3f0c7%3A0xf81d3c9b4d8cbd48!2sTrofeos%20Abm!5e0!3m2!1ses-419!2sus!4v1710049071632!5m2!1ses-419!2sus"
                     width="1100"
@@ -35,20 +37,39 @@ export function Ubicacion() {
                           <p className="mt-1 text-gray-600">Av Filiberto Gomez 4, Santiago Cuautlalpan, 56250 Texcoco de Mora, Méx., México</p>
                         </div>
                         <div className="border-t border-gray-200 px-6 py-4">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <FcMultipleDevices className="text-xl" />
+                            <h3 className="text-lg font-medium text-gray-900">Escríbenos</h3>
+                          </div>
+                          <div className="text-gray-600 flex items-center">
+                            <FaEnvelope color="#525252" style={{marginRight: '4px'}}/>
+                            <span>Email: abm_trofeos@live.com.mx</span>
+                          </div>
+                          <p className="text-gray-600 flex items-center mt-2">
+                            <a href={`https://wa.me/+525533483104?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer" className="flex items-center">
+                              <FaWhatsapp color="#128c7e" style={{marginRight: '4px'}}/> +52 59 5921 0879
+                            </a>
+                          </p>
+                        </div>
+                        <div className="border-t border-gray-200 px-6 py-4">
+                          <div className="flex items-center space-x-2 mb-2">
+                            <FaPhoneFlip className="text-xl" color="#0E86D4"/>
+                            <h3 className="text-lg font-medium text-gray-900">Teléfonos de Tienda</h3>
+                          </div>
+                          <p className="mt-2 text-gray-600"> +52 595 9212043</p>
+                          <p className="mt-2 text-gray-600"> +52 595 9210879</p>
+                        </div>
+
+                        <div className="border-t border-gray-200 px-6 py-4">
                           <div className="flex items-center space-x-2">
                             <FcAlarmClock className="text-xl" />
                             <h3 className="text-lg font-medium text-gray-900">Horarioss</h3>
                           </div>
-                          <p className="mt-2 text-gray-600">Lunes - Domingo: 9am - 5pm</p>
+                          <p className="mt-2 text-gray-600">Lunes - Viernes: 8am - 6pm</p>
+                          <p className="mt-2 text-gray-600">Lunes - Domingo: 8am - 4pm</p>
+                          <p className="mt-2 text-gray-600">Domingo: Cerrado</p>
                         </div>
-                        <div className="border-t border-gray-200 px-6 py-4">
-                          <div className="flex items-center space-x-2 mb-2"> {/* Add margin-bottom to create space between this line and the paragraphs */}
-                            <FcMultipleDevices className="text-xl" />
-                            <h3 className="text-lg font-medium text-gray-900">Escríbenos</h3>
-                          </div>
-                          <p className="text-gray-600">Email: info@example.com</p>
-                          <p className="text-gray-600">Phone: +52 59 5921 0879</p>
-                        </div>
+                        
 
                     </div>
                 </div>

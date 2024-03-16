@@ -2,15 +2,8 @@ import { useLocation, Link } from "react-router-dom";
 import {
   Navbar,
   Typography,
-  Button,
   IconButton,
   Breadcrumbs,
-  Input,
-  Menu,
-  MenuHandler,
-  MenuList,
-  MenuItem,
-  Avatar,
 } from "@material-tailwind/react";
 import {
   UserCircleIcon,
@@ -20,7 +13,7 @@ import {
   CreditCardIcon,
   Bars3Icon,
 } from "@heroicons/react/24/solid";
-import { FaXTwitter, FaWhatsapp } from "react-icons/fa6";
+import { FaTiktok,FaXTwitter, FaWhatsapp } from "react-icons/fa6";
 import {
   useMaterialTailwindController,
   setOpenConfigurator,
@@ -74,9 +67,7 @@ export function DashboardNavbar() {
           </Typography>
         </div>
         <div className="flex items-center">
-          <div className="mr-auto md:mr-4 md:w-56">
-            <Input label="Search" />
-          </div>
+
           <IconButton
             variant="text"
             color="blue-gray"
@@ -86,8 +77,11 @@ export function DashboardNavbar() {
             <Bars3Icon strokeWidth={3} className="h-6 w-6 text-blue-gray-500" />
           </IconButton>
 
-          social: (
+          : (social
                   <div className="flex items-center gap-4">
+                     <a href={`https://www.tiktok.com/@trofeosabm`} target="_blank" rel="noopener noreferrer">
+                      <FaTiktok color="#000000"/>
+                    </a>
                     <a href="https://www.facebook.com/ABMTrofeos" target="_blank" rel="noopener noreferrer">
                       <i className="fa-brands fa-facebook text-blue-700" />
                     </a>
