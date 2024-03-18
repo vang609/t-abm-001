@@ -47,7 +47,7 @@ export function Ubicacion() {
                           </div>
                           <p className="text-gray-600 flex items-center mt-2">
                             <a href={`https://wa.me/+525533483104?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                              <FaWhatsapp color="#128c7e" style={{marginRight: '4px'}}/> +52 59 5921 0879
+                              <FaWhatsapp color="#128c7e" style={{marginRight: '4px'}}/> 55 33 48 31 04
                             </a>
                           </p>
                         </div>
@@ -56,8 +56,8 @@ export function Ubicacion() {
                             <FaPhoneFlip className="text-xl" color="#0E86D4"/>
                             <h3 className="text-lg font-medium text-gray-900">Teléfonos de Tienda</h3>
                           </div>
-                          <p className="mt-2 text-gray-600"> +52 595 9212043</p>
-                          <p className="mt-2 text-gray-600"> +52 595 9210879</p>
+                          <p className="mt-2 text-gray-600"> 5959212043</p>
+                          <p className="mt-2 text-gray-600"> 5959210879</p>
                         </div>
 
                         <div className="border-t border-gray-200 px-6 py-4">

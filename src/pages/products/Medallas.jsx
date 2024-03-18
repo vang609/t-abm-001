@@ -5,25 +5,14 @@ import {
   CardFooter,
   Avatar,
   Typography,
-  Tabs,
-  TabsHeader,
-  Tab,
-  Switch,
-  Tooltip,
   Button,
 } from "@material-tailwind/react";
-import {
-  HomeIcon,
-  ChatBubbleLeftEllipsisIcon,
-  Cog6ToothIcon,
-  PencilIcon,
-} from "@heroicons/react/24/solid";
+
 import { Link } from "react-router-dom";
-import { ProfileInfoCard, MessageCard } from "@/widgets/cards";
-import { platformSettingsData, conversationsData, balonesData } from "@/data";
+import { medallasData } from "@/data";
 
 
-export function Balones() {
+export function Medallas() {
   return (
     <>
      
@@ -32,7 +21,7 @@ export function Balones() {
           <div className="mb-10 flex items-center justify-between flex-wrap gap-6">
             <div className="flex items-center gap-6">
               <Avatar
-                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/products/balones/avatar_trophyBall.webp`}
+                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/products/medallas/avatar_medalla.webp`}
                 alt="avatar_trophyBall"
                 size="xl"
                 variant="rounded"
@@ -40,7 +29,7 @@ export function Balones() {
               />
               <div>
                 <Typography variant="h5" color="blue-gray" className="mb-1">
-                  Balones
+                  Medallas
                 </Typography>
                
               </div>
@@ -59,22 +48,9 @@ export function Balones() {
               Comparte con el codigo
             </Typography>
             <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 animate__animated animate__fadeIn">
-              {balonesData.map(
-                ({ img, title, description, tag, type, id }, index) => (
+              {medallasData.map(
+                ({ img, title, description, tag, route, id, type }, index) => (
                   <Card key={`${title}-${index}`} color="transparent" shadow={false}>
-                   {/* <CardHeader
-  floated={false}
-  color="gray"
-  className="mx-0 mt-0 mb-4 h-64 xl:h-40 relative overflow-hidden"
->
-  <img
-    src={`${import.meta.env.VITE_APP_ASSET_PATH}${img}`}
-    alt={title}
-    className="w-full h-full object-contain"
-  />
-</CardHeader> */}
-
-
                     <CardHeader
                       floated={false}
                       color="gray"
@@ -88,12 +64,12 @@ export function Balones() {
                       />
                     </CardHeader>
                     <CardBody className="py-0 px-1">
-                      <Typography
+                      {/* <Typography
                         variant="small"
                         className="font-normal text-blue-gray-500"
                       >
                         {tag}
-                      </Typography>
+                      </Typography> */}
                       <Typography
                         variant="h5"
                         color="blue-gray"
@@ -126,4 +102,4 @@ export function Balones() {
   );
 }
 
-export default Balones;
+export default Medallas;

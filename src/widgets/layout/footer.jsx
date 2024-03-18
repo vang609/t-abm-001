@@ -14,10 +14,10 @@ export function Footer({ brandName, brandLink, routes }) {
       &copy; {new Date().getFullYear()}, by T-ABM{" "}
       <HeartIcon className="h-3.5 w-3.5 text-red-600 mr-5" /> {/* Added marginRight for spacing */}
       <a href={`https://wa.me/+525533483104?text=${encodeURIComponent(message)}`} target="_blank" rel="noopener noreferrer" className="flex items-center mr-2"> {/* Added marginRight for spacing */}
-        <FaWhatsapp color="#128c7e" className="mr-1"/> +52 3348 3104 {/* Added marginRight to the icon */}
+        <FaWhatsapp color="#128c7e" className="mr-1"/> 55 33 48 31 04 {/* Added marginRight to the icon */}
       </a>
       <a href="mailto:abm_trofeos@live.com.mx" target="_blank" rel="noopener noreferrer" className="flex items-center"> {/* Corrected protocol for email */}
-        <FaEnvelope color="#525252" className="mr-1 ml-2"/> abm_trofeos@live.com.mx {/* Added marginRight to the icon */}
+        {/* <FaEnvelope color="#525252" className="mr-1 ml-2"/> abm_trofeos@live.com.mx  */}
       </a>
     </div>
   </div>

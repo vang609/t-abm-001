@@ -8,5 +8,8 @@ export * from "@/data/projects-data";
 export * from "@/data/authors-table-data";
 export * from "@/data/about-data";
 export * from "@/data/trofeos-data";
-export * from "@/data/balones-data";
 export * from "@/data/trofeos-main-data";
+export * from "@/data/balones-data";
+export * from "@/data/medallas-data";
+export * from "@/data/reconocimientos-data";
+

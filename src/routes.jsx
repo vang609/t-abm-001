@@ -11,9 +11,9 @@ import { GiTrophyCup, GiLaurelsTrophy, GiDiamondTrophy } from "react-icons/gi";
 import { LiaTrophySolid } from "react-icons/lia";
 import { FcContacts, FcHome, FcAbout, FcGlobe } from "react-icons/fc";
 
-import { Home, Contacto, Profile, Tables, Notifications, Inicio, Nosotros, Ubicacion } from "@/pages/dashboard";
-import { SignIn, SignUp } from "@/pages/auth";
-import { Balones, Copas, ReconocimientoCristal, TerminacionMate, Trofeos } from "@/pages/products";
+import { Contacto, Inicio, Nosotros, Ubicacion } from "@/pages/dashboard";
+import { PiMedalLight } from "react-icons/pi";
+import { Balones, Copas, Medallas,Reconocimientos, TerminacionMate, Trofeos } from "@/pages/products";
 
 const icon = {
   className: "w-5 h-5 text-inherit",
@@ -47,31 +47,6 @@ export const routes = [
         path: "/Ubicacion",
         element: <Ubicacion />,
       },
-      
-      // {
-      //   icon: <HomeIcon {...icon} />,
-      //   name: "dashboard",
-      //   path: "/home",
-      //   element: <Home />,
-      // },
-      // {
-      //   icon: <UserCircleIcon {...icon} />,
-      //   name: "profile",
-      //   path: "/profile",
-      //   element: <Profile />,
-      // },
-      // {
-      //   icon: <TableCellsIcon {...icon} />,
-      //   name: "tables",
-      //   path: "/tables",
-      //   element: <Tables />,
-      // },
-      // {
-      //   icon: <InformationCircleIcon {...icon} />,
-      //   name: "notifications",
-      //   path: "/notifications",
-      //   element: <Notifications />,
-      // },
     ],
   },
   {
@@ -99,18 +74,25 @@ export const routes = [
         element: <Balones />,
         isDisabled: false
       },
+      // {
+      //   icon: <LiaTrophySolid color="#CC9933" {...icon} />,
+      //   name: "terminacion mate",
+      //   path: "/TerminacionMate",
+      //   element: <TerminacionMate />,
+      //   isDisabled: false
+      // },
       {
-        icon: <LiaTrophySolid color="#CC9933" {...icon} />,
-        name: "terminacion mate",
-        path: "/TerminacionMate",
-        element: <TerminacionMate />,
+        icon: <GiDiamondTrophy color="#009999" {...icon} />,
+        name: "Reconocimientos",
+        path: "/Reconocimientos",
+        element: <Reconocimientos />,
         isDisabled: false
       },
       {
-        icon: <GiDiamondTrophy color="#009999" {...icon} />,
-        name: "reconocimiento cristal",
-        path: "/ReconocimientoCristal",
-        element: <ReconocimientoCristal />,
+        icon: <PiMedalLight color="#DB1F48" {...icon} />,
+        name: "medallas",
+        path: "/medallas",
+        element: <Medallas />,
         isDisabled: false
       },
       // {
