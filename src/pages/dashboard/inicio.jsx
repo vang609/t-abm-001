@@ -2,56 +2,32 @@ import {
   Card,
   CardBody,
   CardHeader,
-  CardFooter,
   Avatar,
   Typography,
-  Tabs,
-  TabsHeader,
-  Tab,
   Switch,
   Tooltip,
   Button,
 } from "@material-tailwind/react";
 import {
-  HomeIcon,
-  ChatBubbleLeftEllipsisIcon,
-  Cog6ToothIcon,
   PencilIcon,
 } from "@heroicons/react/24/solid";
-import { Link } from "react-router-dom";
 import { ProfileInfoCard, MessageCard } from "@/widgets/cards";
 import { platformSettingsData, conversationsData, projectsData } from "@/data";
 
 export function Inicio() {
   return (
     <>
-      {/* <div className="relative mt-8 h-72 w-full overflow-hidden rounded-xl bg-[url('/img/banner/banner01.webp')] bg-cover	bg-center">
-        <div className="absolute inset-0 h-full w-full " />
-      </div> */}
 
       <div className="relative mt-8 h-72 w-full overflow-hidden rounded-xl bg-[url('/img/banner/banner01.webp')] bg-cover bg-bottom">
     <div className="absolute inset-0 h-full w-full " />
 </div>
-
-{/* <div className="relative mt-8 h-72 w-full overflow-hidden rounded-xl bg-[url('/img/banner/banner01.webp')] bg-bottom"
-     style={{backgroundSize: '90%', backgroundRepeat: 'no-repeat'}}>
-    <div className="absolute inset-0 h-full w-full " />
-</div> */}
-
-     {/* <div className="relative mt-8 h-72 w-full overflow-hidden rounded-xl bg-bottom" 
-     style={{ backgroundImage: "url('/img/banner/banner01.webp')", backgroundSize: 'auto 100%', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>
-    <div className="absolute inset-0 h-full w-full" />
-</div> */}
-
-
-
 
       <Card className="mx-3 -mt-16 mb-6 lg:mx-4 border border-blue-gray-100">
         <CardBody className="p-4">
           <div className="mb-10 flex items-center justify-between flex-wrap gap-6">
             <div className="flex items-center gap-6" >
               <Avatar
-                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/avatar/adrian.jpeg`}
+                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/avatar/home_avatar.webp`}
                 alt="adrian-ceo"
                 size="xl"
                 variant="rounded"
@@ -73,35 +49,7 @@ export function Inicio() {
              <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <p className="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Ofrecemos servicios premium a precios justos.</p>
             </div> 
-            {/* <div className="w-96">
-              <Tabs value="app">
-                <TabsHeader>
-                  <Tab value="app">
-                    <HomeIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
-                    App
-                  </Tab>
-                  <Tab value="message">
-                    <ChatBubbleLeftEllipsisIcon className="-mt-0.5 mr-2 inline-block h-5 w-5" />
-                    Message
-                  </Tab>
-                  <Tab value="settings">
-                    <Cog6ToothIcon className="-mt-1 mr-2 inline-block h-5 w-5" />
-                    Settings
-                  </Tab>
-                </TabsHeader>
-              </Tabs>
-            </div> */}
           </div>
-          
-           {/* <div className="bg-white py-24 sm:py-32"> */}
-            {/* <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="mx-auto max-w-4xl text-center">
-                <h2 className="text-base font-semibold leading-7 text-teal-600">Pricing</h2>
-                <p className="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Pricing plans for teams of all sizes</p>
-              </div> 
-            </div>  */}
-          {/* </div>   */}
-
 
           <div className="gird-cols-1 mb-12 grid gap-12 px-4 lg:grid-cols-2 xl:grid-cols-3">
             <div>
@@ -218,28 +166,6 @@ export function Inicio() {
                         {description}
                       </Typography>
                     </CardBody>
-                    {/* <CardFooter className="mt-6 flex items-center justify-between py-0 px-1">
-                      <Link to={route}>
-                        <Button variant="outlined" size="sm">
-                          view project
-                        </Button>
-                      </Link>
-                      <div>
-                        {members.map(({ img, name }, key) => (
-                          <Tooltip key={name} content={name}>
-                            <Avatar
-                              src={`${import.meta.env.VITE_APP_ASSET_PATH}${img}`}
-                              alt={name}
-                              size="xs"
-                              variant="circular"
-                              className={`cursor-pointer border-2 border-white ${
-                                key === 0 ? "" : "-ml-2.5"
-                              }`}
-                            />
-                          </Tooltip>
-                        ))}
-                      </div>
-                    </CardFooter> */}
                   </Card>
                 )
               )}
