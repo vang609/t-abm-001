@@ -1,10 +1,10 @@
 export const projectsData = [
   {
-    img: "img/home-decor-1.jpeg",
-    title: "Modern",
-    tag: "Project #1",
+    img: "img/products/medallas/ABM-MCH.webp",
+    title: "Medalla",
+    tag: "ABM-MCH",
     description:
-      "As Uber works through a huge amount of internal management turmoil.",
+      "Diferentes premiaciones",
     route: "/dashboard/profile",
     members: [
       { img: "img/team-1.jpeg", name: "Romina Hadid" },
@@ -14,12 +14,12 @@ export const projectsData = [
     ],
   },
   {
-    img: "img/home-decor-2.jpeg",
-    title: "Scandinavian",
-    tag: "Project #2",
+    img: "img/products/reconocimientos/ABM-J.webp",
+    title: "Reconocimiento ",
+    tag: "ABM-J",
     description:
-      "Music is something that every person has his or her own specific opinion about.",
-    route: "/dashboard/profile",
+      "Charreria y mas",
+    route: "/product/",
     members: [
       { img: "img/team-4.jpeg", name: "Alexander Smith" },
       { img: "img/team-3.jpeg", name: "Jessica Doe" },
@@ -28,11 +28,11 @@ export const projectsData = [
     ],
   },
   {
-    img: "img/home-decor-3.jpeg",
-    title: "Minimalist",
-    tag: "Project #3",
+    img: "img/products/medallas/ABM-MFIFA.webp",
+    title: "Medalla Premiaciones",
+    tag: "ABM-MFIFA",
     description:
-      "Different people have different taste, and various types of music.",
+      "Los tres primeros lugares",
     route: "/dashboard/profile",
     members: [
       { img: "img/team-1.jpeg", name: "Romina Hadid" },
@@ -42,11 +42,11 @@ export const projectsData = [
     ],
   },
   {
-    img: "img/home-decor-4.jpeg",
-    title: "Gothic",
-    tag: "Project #4",
+    img: "img/products/reconocimientos/ABM-T1.webp",
+    title: "Reconocimiento",
+    tag: "ABM-T1",
     description:
-      "Why would anyone pick blue over pink? Pink is obviously a better color.",
+      "Toros y mas",
     route: "/dashboard/profile",
     members: [
       { img: "img/team-4.jpeg", name: "Alexander Smith" },

@@ -10,9 +10,13 @@ import {
 
 import { Link } from "react-router-dom";
 import { medallasData } from "@/data";
+import useAOS from '@/hooks/useAOS';
+
 
 
 export function Medallas() {
+  useAOS();
+
   return (
     <>
      
@@ -37,7 +41,7 @@ export function Medallas() {
 
           </div>
          
-          <div className="px-4 pb-4">
+          <div className="px-4 pb-4" data-aos="fade-up">
             <Typography variant="h6" color="blue-gray" className="mb-2">
               Catalogo de Trofeos
             </Typography>
@@ -47,15 +51,14 @@ export function Medallas() {
             >
               Comparte con el codigo
             </Typography>
-            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 animate__animated animate__fadeIn">
+            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 animate__animated animate__fadeIn" data-aos="fade-up">
               {medallasData.map(
                 ({ img, title, description, tag, route, id, type }, index) => (
-                  <Card key={`${title}-${index}`} color="transparent" shadow={false}>
+                  <Card key={`${title}-${index}`} color="transparent" shadow={false} data-aos="fade-up">
                     <CardHeader
                       floated={false}
                       color="gray"
                       className="mx-0 mt-0 mb-4 aspect-w-16 aspect-h-9"
-                      // className="mx-0 mt-0 mb-4 h-64 xl:h-40"
                     >
                       <img
                         src={`${import.meta.env.VITE_APP_ASSET_PATH}${img}`}
@@ -64,12 +67,6 @@ export function Medallas() {
                       />
                     </CardHeader>
                     <CardBody className="py-0 px-1">
-                      {/* <Typography
-                        variant="small"
-                        className="font-normal text-blue-gray-500"
-                      >
-                        {tag}
-                      </Typography> */}
                       <Typography
                         variant="h5"
                         color="blue-gray"

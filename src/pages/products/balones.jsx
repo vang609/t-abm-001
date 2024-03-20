@@ -19,11 +19,13 @@ import {
   PencilIcon,
 } from "@heroicons/react/24/solid";
 import { Link } from "react-router-dom";
-import { ProfileInfoCard, MessageCard } from "@/widgets/cards";
 import { platformSettingsData, conversationsData, balonesData } from "@/data";
+import useAOS from "@/hooks/useAOS";
+
 
 
 export function Balones() {
+  useAOS();
   return (
     <>
      
@@ -58,10 +60,10 @@ export function Balones() {
             >
               Comparte con el codigo
             </Typography>
-            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 animate__animated animate__fadeIn">
+            <div className="mt-6 grid grid-cols-1 gap-12 md:grid-cols-2 xl:grid-cols-4 animate__animated animate__fadeIn" data-aos="fade-up">
               {balonesData.map(
                 ({ img, title, description, tag, type, id }, index) => (
-                  <Card key={`${title}-${index}`} color="transparent" shadow={false}>
+                  <Card key={`${title}-${index}`} color="transparent" shadow={false} data-aos="fade-up">
                    {/* <CardHeader
   floated={false}
   color="gray"

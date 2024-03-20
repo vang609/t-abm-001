@@ -4,17 +4,39 @@ import {
   CardHeader,
   Avatar,
   Typography,
-  Switch,
-  Tooltip,
-  Button,
 } from "@material-tailwind/react";
-import {
-  PencilIcon,
-} from "@heroicons/react/24/solid";
-import { ProfileInfoCard, MessageCard } from "@/widgets/cards";
-import { platformSettingsData, conversationsData, projectsData } from "@/data";
+import Slider from 'react-slick';
+import { ProfileInfoCard } from "@/widgets/cards";
+import { projectsData, carouselData, inicioProfileData } from "@/data";
+import { Carousel } from "@/widgets/carousel/Carousel";
 
 export function Inicio() {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+
   return (
     <>
 
@@ -36,13 +58,13 @@ export function Inicio() {
 
               <div>
                 <Typography variant="h5" color="blue-gray" className="mb-1">
-                  Adrian Banda
+                  Trofeos ABM
                 </Typography>
                 <Typography
                   variant="small"
                   className="font-normal text-blue-gray-600"
                 >
-                  CEO / Fundador
+                  Premiando a los campeones
                 </Typography>
               </div>
             </div>
@@ -52,74 +74,40 @@ export function Inicio() {
           </div>
 
           <div className="gird-cols-1 mb-12 grid gap-12 px-4 lg:grid-cols-2 xl:grid-cols-3">
-            <div>
-              <Typography variant="h6" color="blue-gray" className="mb-3">
-                Platform Settings
-              </Typography>
-              <div className="flex flex-col gap-12">
-                {platformSettingsData.map(({ title, options }) => (
-                  <div key={title}>
-                    <Typography className="mb-4 block text-xs font-semibold uppercase text-blue-gray-500">
-                      {title}
-                    </Typography>
-                    <div className="flex flex-col gap-6">
-                      {options.map(({ checked, label }) => (
-                        <Switch
-                          key={label}
-                          id={label}
-                          label={label}
-                          defaultChecked={checked}
-                          labelProps={{
-                            className: "text-sm font-normal text-blue-gray-500",
-                          }}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            {/* Column for ProfileInfoCards */}
+            <div className="flex flex-col">
+              { inicioProfileData.map(
+                ({caption, subCaption}) => (
+                   <ProfileInfoCard
+                title={caption}
+                description={subCaption}
+              />
+                )
+              )}
             </div>
-            <ProfileInfoCard
-              title="Profile Information"
-              description="Hi, I'm Alec Thompson, Decisions: If you can't decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
-              details={{
-                "first name": "Alec M. Thompson",
-                mobile: "(44) 123 1234 123",
-                email: "alecthompson@mail.com",
-                location: "USA",
-                social: (
-                  <div className="flex items-center gap-4">
-                    <i className="fa-brands fa-facebook text-blue-700" />
-                    <i className="fa-brands fa-twitter text-blue-400" />
-                    <i className="fa-brands fa-instagram text-purple-500" />
-                  </div>
-                ),
-              }}
-              action={
-                <Tooltip content="Edit Profile">
-                  <PencilIcon className="h-4 w-4 cursor-pointer text-blue-gray-500" />
-                </Tooltip>
-              }
-            />
-            <div>
-              <Typography variant="h6" color="blue-gray" className="mb-3">
-                Platform Settings
-              </Typography>
-              <ul className="flex flex-col gap-6">
-                {conversationsData.map((props) => (
-                  <MessageCard
-                    key={props.name}
-                    {...props}
-                    action={
-                      <Button variant="text" size="sm">
-                        reply
-                      </Button>
-                    }
-                  />
-                ))}
-              </ul>
+
+
+            <div className="mb-12 px-4">
+                <Typography variant="h5" color="blue-gray" className="mb-4">
+                  Productos Exclusivos
+                </Typography>
+                <Carousel images={carouselData} />
             </div>
           </div>
+
+          {/* <div className="gird-cols-1 mb-12 grid gap-12 px-4 lg:grid-cols-2 xl:grid-cols-3">
+              <ProfileInfoCard
+                title="+ DE 3000 DISEÑOS"
+                description="Contamos con diversos modelos en latón, zamack, aluminio, cristal para cualquier tipo de evento deportivo y cultural."
+              />
+              <div className="mb-12 px-4">
+                <Typography variant="h5" color="blue-gray" className="mb-4">
+                  Productos Exclusivos
+                </Typography>
+                <Carousel images={carouselData} />
+            </div>
+
+          </div> */}
           <div className="px-4 pb-4">
             <Typography variant="h6" color="blue-gray" className="mb-2">
               Más vendidos 

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { setOpenSidenav } from "@/context";
 import { Routes, Route } from "react-router-dom";
 import { Cog6ToothIcon } from "@heroicons/react/24/solid";
@@ -31,6 +31,7 @@ export function Dashboard() {
     document.removeEventListener('mousedown', handleClickOutside);
   };
 }, [controller.openSidenav, dispatch]);
+
 
   return (
     <div className="min-h-screen bg-blue-gray-50/50">
