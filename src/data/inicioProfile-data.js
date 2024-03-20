@@ -1,19 +1,19 @@
 export const inicioProfileData = [
     {
-    caption: "innovación q se premia",
-    subCaption: "Somos una MiPYME 100% mexicana dedicada a la fabricación de trofeos,38 años nos respaldan en ofrecer la mejor calidad.",
+    caption: "INNOVACION QUE SE PREMIA",
+    subCaption: "Somos una MiPYME 100% mexicana dedicada a la fabricación de trofeos,Creando Valor Constante.",
     },
     {
-        caption: "+ DE 3000 DISEÑOS",
-        subCaption: "Contamos con diversos modelos en latón, zamack, aluminio, cristal para cualquier tipo de evento deportivo y cultural.",
+        caption: "INNOVACION CONSTANTE",
+        subCaption: "Contamos con Trofeos y Reconocimientos para todos los deportes, Personalizamos tus medallas y/o Premiaciones.",
     },
     {
-        caption: "+ DE 24 AÑOS DE EXPERIENCIA",
-        subCaption: "Somos una MiPYME 100% mexicana dedicada a la fabricación de trofeos,38 años nos respaldan en ofrecer la mejor calidad.",
+        caption: "NUESTRO COMPROMISO",
+        subCaption: "Calidad, Honestidad y Responsabilidad.",
     },
     {
-        caption: "+ DE 1000 CLIENTES",
-        subCaption: "Nuestro trabajo este presente en todo México y el extranjero. Nuestros clientes respaldan nuestra trayectoria.",
+        caption: "Compromiso y Excelencia en Atención a nuestros CLIENTES",
+        subCaption: "Servicio excepcional y personalizado, asegurando que cada cliente se sienta valorado y sus logros debidamente celebrados.",
     },
 
   

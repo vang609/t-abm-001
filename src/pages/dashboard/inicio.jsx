@@ -49,7 +49,7 @@ export function Inicio() {
           <div className="mb-10 flex items-center justify-between flex-wrap gap-6">
             <div className="flex items-center gap-6" >
               <Avatar
-                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/avatar/home_avatar.webp`}
+                src={`${import.meta.env.VITE_APP_ASSET_PATH}img/logo/trofeosABM.png`}
                 alt="adrian-ceo"
                 size="xl"
                 variant="rounded"
@@ -64,12 +64,12 @@ export function Inicio() {
                   variant="small"
                   className="font-normal text-blue-gray-600"
                 >
-                  Premiando a los campeones
+                  Premiando a los campeones desde 1998.
                 </Typography>
               </div>
             </div>
              <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <p className="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Ofrecemos servicios premium a precios justos.</p>
+                <p className="mt-2 text-4xl font-bold tracking-tight text-blue-500 sm:text-5xl">Comprometidos con la calidad a buen precio.</p>
             </div> 
           </div>
 
@@ -110,7 +110,7 @@ export function Inicio() {
           </div> */}
           <div className="px-4 pb-4">
             <Typography variant="h6" color="blue-gray" className="mb-2">
-              Más vendidos 
+              Recomendaciones
             </Typography>
             <Typography
               variant="small"
